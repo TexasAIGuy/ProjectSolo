@@ -1,0 +1,461 @@
+/* === Base Reset / Defaults === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: #0f172a;
+  color: #e5e7eb;
+  line-height: 1.5;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* === Header Styles=== */
+.site-header {
+  background: linear-gradient(135deg, #1d4ed8, #7c3aed);
+  color: white;
+  padding: 1.75rem 0 2rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.6);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.header-main h1 {
+  margin: 0 0 0.25rem;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.header-main p {
+  margin: 0;
+  opacity: 0.9;
+}
+/* === Header Main Layout === */
+.header-main {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* iTunes logo */
+.itunes-logo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Keep text grouped */
+.header-text h1 {
+  margin: 0 0 0.25rem;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.header-text p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* === Genre of the Day pill === */
+.genre-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background-color: rgba(15, 23, 42, 0.45);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  font-size: 0.78rem;
+  backdrop-filter: blur(4px);
+}
+
+.genre-label {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.genre-value {
+  font-weight: 500;
+  color: #facc15;
+}
+
+/* === Quote of the Day Card === */
+.quote-card {
+  position: relative;
+  width: 260px;
+  min-height: 120px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(248, 250, 252, 0.2);
+  background-color: rgba(15, 23, 42, 0.85);
+  isolation: isolate;
+}
+
+.quote-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6);
+  z-index: -1;
+}
+
+.quote-content {
+  position: relative;
+  padding: 0.9rem 0.9rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.quote-text {
+  margin: 0 0 0.4rem;
+  font-style: italic;
+}
+
+.quote-author {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-align: right;
+  opacity: 0.95;
+}
+
+
+/*.header-inner h1 {
+  margin: 0 0 0.25rem;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+} 
+
+.header-inner p {
+  margin: 0;
+  opacity: 0.9;
+} */
+
+/* === Main Content === */
+.site-main {
+  padding: 2rem 0 3rem;
+}
+
+/* Search Section */
+.search-section {
+  margin-bottom: 1.5rem;
+}
+
+.search-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.search-form {
+  margin-bottom: 0.5rem;
+}
+
+.search-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+#search-input {
+  flex: 1 1 200px;
+  min-width: 0;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid #4b5563;
+  background-color: #020617;
+  color: #e5e7eb;
+}
+
+#search-input::placeholder {
+  color: #6b7280;
+}
+
+#search-input:focus-visible,
+#media-type:focus-visible,
+#search-button:focus-visible,
+.clear-button:focus-visible {
+  outline: 2px solid #facc15;
+  outline-offset: 2px;
+}
+
+#media-type {
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid #4b5563;
+  background-color: #020617;
+  color: #e5e7eb;
+}
+
+#search-button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #022c22;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease,
+    filter 0.08s ease;
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.35);
+}
+
+#search-button:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(34, 197, 94, 0.45);
+}
+
+#search-button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 18px rgba(34, 197, 94, 0.3);
+}
+
+.helper-text {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+/* Status messages */
+.status {
+  min-height: 1.5rem;
+  margin: 0.75rem 0 1.25rem;
+  font-size: 0.95rem;
+}
+
+.status[data-type="loading"] {
+  color: #e5e7eb;
+}
+
+.status[data-type="success"] {
+  color: #22c55e;
+}
+
+.status[data-type="error"] {
+  color: #f97373;
+}
+
+.status[data-type="empty"] {
+  color: #fbbf24;
+}
+
+/* Results Section */
+.results-section {
+  background-color: #020617;
+  border-radius: 1rem;
+  padding: 1.25rem 1rem 1.5rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.8);
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.results-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.clear-button {
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #4b5563;
+  background-color: transparent;
+  color: #9ca3af;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.08s ease, color 0.08s ease;
+}
+
+.clear-button:hover {
+  background-color: #111827;
+  color: #e5e7eb;
+}
+
+/* Grid */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+/* Card */
+.result-card {
+  background: radial-gradient(circle at top left, #111827, #020617);
+  border-radius: 1rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(75, 85, 99, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-3px);
+  border-color: #22d3ee;
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.85);
+}
+
+.result-card-header {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.result-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 0.75rem;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.result-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.track-name {
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: #e5e7eb;
+}
+
+.artist-name {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.album-name {
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+.result-meta {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.audio-wrapper {
+  margin-top: 0.3rem;
+}
+
+audio {
+  width: 100%;
+}
+
+/* Links */
+.result-link {
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: #22c55e;
+  text-decoration: none;
+}
+
+.result-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid #1f2937;
+  padding: 1.5rem 0 2rem;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.footer-small-text {
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+/* Utilities */
+.hidden {
+  display: none;
+}
+
+/* Accessibility helper for visually hidden labels */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+/* === Responsive tweaks === */
+@media (max-width: 640px) {
+  .site-main {
+    padding-top: 1.25rem;
+  }
+
+  .results-section {
+    padding: 1rem 0.9rem 1.25rem;
+  }
+
+  .result-card {
+    padding: 0.75rem;
+  }
+
+  .result-card img {
+    width: 70px;
+    height: 70px;
+  }
+   /* Stack header content & widen the quote card on small screens */
+  .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quote-card {
+    width: 100%;
+  }
+   /* Stack logo above title on mobile */
+  .header-main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .itunes-logo {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 0.5rem;
+  }
+  .genre-pill {
+    margin-top: 0.75rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
