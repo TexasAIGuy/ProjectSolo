@@ -21,3 +21,6 @@ A small interactive front-end web app that lets you search the iTunes catalog fo
 iTunes API
 dummyjson.com/quotes/random
 binaryjazz.us/wp-json/genrenator/v1/genre
+
+#Created
+By: Raymond Tucker & ChatGpt
