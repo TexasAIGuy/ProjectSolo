@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iTunes Music Search</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <!--<div class="header-main">
+      <h1>iTunes Music Search</h1>
+      <p>Search for songs, albums, or music videos using the free iTunes Search API.</p>
+    </div> -->
+    <div class="header-main">
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/d/df/ITunes_logo.svg"
+    alt="iTunes Logo"
+    class="itunes-logo"
+  />
+
+  <div class="header-text">
+  <h1>iTunes Music Search</h1>
+  <p>Search for songs, albums, or music videos using the free iTunes Search API.</p>
+
+  <!-- Music Genre of the Day -->
+  <div class="genre-pill" id="genre-pill">
+    <span class="genre-label">Genre of the day:</span>
+    <span class="genre-value" id="genre-value">Loading…</span>
+  </div>
+</div>
+
+    <!-- Quote of the Day -->
+    <aside class="quote-card" aria-label="Quote of the day">
+      <div class="quote-image"></div>
+      <div class="quote-content">
+        <p id="quote-text" class="quote-text">
+          Loading quote of the day…
+        </p>
+        <p id="quote-author" class="quote-author"></p>
+      </div>
+    </aside>
+  </div>
+</header>
+
+  <main class="site-main">
+    <div class="container">
+      <!-- Search Section -->
+      <section class="search-section" aria-labelledby="search-heading">
+        <h2 id="search-heading">Search the iTunes Catalog</h2>
+
+        <form id="search-form" class="search-form">
+          <label for="search-input" class="visually-hidden">
+            Search by artist, song, or album
+          </label>
+          <div class="search-controls">
+            <input
+              type="text"
+              id="search-input"
+              name="term"
+              placeholder="Try 'Taylor Swift', 'Drake', or 'Imagine Dragons'"
+              required
+            />
+
+            <label for="media-type" class="visually-hidden">Result type</label>
+            <select id="media-type" name="entity">
+              <option value="song" selected>Songs</option>
+              <option value="album">Albums</option>
+              <option value="musicVideo">Music Videos</option>
+            </select>
+
+            <button type="submit" id="search-button">
+              Search
+            </button>
+          </div>
+        </form>
+
+        <p id="helper-text" class="helper-text">
+          Tip: results are powered by the public iTunes Search API.
+        </p>
+      </section>
+
+      <!-- Status / messages -->
+      <section
+        id="status"
+        class="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <!-- JS will inject status text here -->
+      </section>
+
+      <!-- Results Section -->
+      <section
+        id="results-section"
+        class="results-section hidden"
+        aria-labelledby="results-heading"
+      >
+        <div class="results-header">
+          <h2 id="results-heading">Results</h2>
+          <button id="clear-button" class="clear-button" type="button">
+            Clear Results
+          </button>
+        </div>
+
+        <div id="results-grid" class="results-grid">
+          <!-- JS will inject result cards here -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>
+        Built for a front-end class project using HTML, CSS, and JavaScript.
+      </p>
+      <p class="footer-small-text">
+        Data provided by the iTunes Search API. This project is for educational
+        purposes only.
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
